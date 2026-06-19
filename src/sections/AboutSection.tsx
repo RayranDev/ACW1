@@ -67,7 +67,7 @@ export default function AboutSection() {
               <div className="relative overflow-hidden">
                 <img
                   src="/images/family-founders.jpg"
-                  alt="Familia Hernández - Fundadores de Amador Café"
+                  alt="Familia Amador Moreno - Fundadores de Amador Café"
                   className="w-full aspect-[4/3] object-cover"
                   loading="lazy"
                 />
@@ -94,13 +94,13 @@ export default function AboutSection() {
 
               <div className="space-y-4 text-tierra/70 text-sm leading-relaxed">
                 <p>
-                  Amador - Café de nuestra tierra nace del amor por nuestra gente y nuestra tradición 
-                  cafetera en Boyacá. Trabajamos con pasión para llevar hasta tu hogar un café de 
+                  Amador - Café de nuestra tierra nace del amor por nuestra gente y nuestra tradición
+                  cafetera en Boyacá. Trabajamos con pasión para llevar hasta tu hogar un café de
                   especialidad que te conecta con lo auténtico.
                 </p>
                 <p>
-                  Cada grano es cultivado a 1600 metros sobre el nivel del mar en las fértiles tierras 
-                  de Moniquirá, donde el clima y la altura crean las condiciones perfectas para un 
+                  Cada grano es cultivado a 1600 metros sobre el nivel del mar en las fértiles tierras
+                  de Moniquirá, donde el clima y la altura crean las condiciones perfectas para un
                   café excepcional con notas de panela, azúcar morena y frutos amarillos.
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default function AboutSection() {
               {/* Signature */}
               <div className="pt-4">
                 <p className="font-accent text-2xl text-bosque italic">
-                  Familia Hernández
+                  Familia Amador Moreno
                 </p>
                 <p className="text-xs text-tierra/50 mt-1">Fundadores</p>
               </div>
