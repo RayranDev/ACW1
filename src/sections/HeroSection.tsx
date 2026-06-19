@@ -87,11 +87,7 @@ export default function HeroSection() {
       >
         {/* Logo Seal */}
         <div className="mb-8 inline-block">
-          <div className="w-24 h-24 mx-auto rounded-full border-2 border-dorado/60 flex items-center justify-center bg-bosque/30 backdrop-blur-sm mb-3">
-            <div className="text-center">
-              <span className="font-display text-dorado text-3xl font-bold block">A</span>
-            </div>
-          </div>
+          <img src="/images/logo.png" alt="Amador Logo" className="w-32 h-32 mx-auto rounded-full border-2 border-dorado/60 mb-3 object-cover shadow-lg" />
           <p className="text-[10px] tracking-[0.3em] text-dorado uppercase">Café de nuestra tierra</p>
         </div>
 

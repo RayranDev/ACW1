@@ -115,9 +115,7 @@ export default function AboutSection() {
 
               {/* Logo */}
               <div className="pt-6 flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full border-2 border-dorado flex items-center justify-center bg-bosque">
-                  <span className="font-display text-dorado text-xl font-bold">A</span>
-                </div>
+                <img src="/images/logo.png" alt="Amador Logo" className="w-16 h-16 rounded-full border-2 border-dorado object-cover" />
                 <div>
                   <p className="font-display text-tierra font-semibold">AMADOR</p>
                   <p className="text-[9px] tracking-[0.2em] text-dorado">CAFÉ DE NUESTRA TIERRA</p>

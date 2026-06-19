@@ -49,9 +49,7 @@ export default function Navigation() {
             }}
             className="flex items-center gap-2 group"
           >
-            <div className="w-12 h-12 rounded-full border-2 border-dorado flex items-center justify-center bg-bosque/50 group-hover:bg-bosque transition-colors">
-              <span className="font-display text-dorado text-lg font-bold">A</span>
-            </div>
+            <img src="/images/logo.png" alt="Amador Logo" className="w-12 h-12 rounded-full border-2 border-dorado object-cover" />
             <div className={`hidden sm:block transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
               <span className="font-display text-white text-sm font-semibold leading-tight">
                 AMADOR
