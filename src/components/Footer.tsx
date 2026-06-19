@@ -1,5 +1,4 @@
-import { Instagram, Facebook, Music, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import { Instagram, Facebook, Music, MapPin, Phone, Mail } from 'lucide-react';
 
 const footerLinks = {
   inicio: [
@@ -20,18 +19,6 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setEmail('');
-      setTimeout(() => setSubscribed(false), 3000);
-    }
-  };
-
   return (
     <footer id="contacto" className="bg-[#4f3b2a] text-white/80">
       {/* Main Footer */}
@@ -128,28 +115,7 @@ export default function Footer() {
               ))}
             </div>
 
-            <h4 className="font-display text-white text-sm font-semibold mb-3 tracking-wider">SUSCRÍBETE</h4>
-            <p className="text-xs text-white/60 mb-3">Recibe novedades, consejos y promociones exclusivas.</p>
-            <form onSubmit={handleSubscribe} className="flex gap-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Tu correo electrónico"
-                className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-sm text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-dorado transition-colors"
-                required
-              />
-              <button
-                type="submit"
-                className="px-3 py-2 bg-dorado hover:bg-dorado-light text-tierra rounded-sm transition-colors"
-                aria-label="Suscribirse"
-              >
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </form>
-            {subscribed && (
-              <p className="mt-2 text-xs text-dorado">¡Gracias por suscribirte!</p>
-            )}
+
           </div>
         </div>
       </div>

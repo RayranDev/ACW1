@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ShoppingCart, Star, Bean, Award, Flame } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,6 +49,7 @@ const badges = [
 
 export default function ProductsSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -174,7 +176,15 @@ export default function ProductsSection() {
                       </span>
                     </div>
 
-                    <button className="w-full mt-3 flex items-center justify-center gap-2 py-2.5 bg-bosque text-white text-xs font-medium tracking-wider hover:bg-bosque-light transition-colors rounded-sm">
+                    <button 
+                      onClick={() => addToCart({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image
+                      })}
+                      className="w-full mt-3 flex items-center justify-center gap-2 py-2.5 bg-bosque text-white text-xs font-medium tracking-wider hover:bg-bosque-light transition-colors rounded-sm"
+                    >
                       <ShoppingCart className="w-3.5 h-3.5" />
                       AÑADIR AL CARRITO
                     </button>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ShoppingCart } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const navLinks = [
   { label: 'INICIO', href: '#inicio' },
@@ -14,6 +15,7 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { openCart, cartCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,13 +88,16 @@ export default function Navigation() {
           {/* Right Actions */}
           <div className="flex items-center gap-3">
             <button
-              className="relative p-2 text-white/90 hover:text-dorado transition-colors"
-              aria-label="Carrito de compras"
+              onClick={openCart}
+              className="relative p-2 text-white/90 hover:text-dorado transition-colors cursor-pointer"
+              aria-label="Abrir Carrito"
             >
               <ShoppingCart className="w-5 h-5" />
-              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-dorado text-tierra text-[10px] font-bold rounded-full flex items-center justify-center">
-                0
-              </span>
+              {cartCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-dorado text-tierra text-[10px] font-bold rounded-full flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
             </button>
 
             <a
