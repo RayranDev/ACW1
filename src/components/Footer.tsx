@@ -9,6 +9,7 @@ const footerLinks = {
     { label: 'Productos', href: '#productos' },
     { label: 'Sobre Nosotros', href: '#sobre-nosotros' },
     { label: 'Contacto', href: '#contacto' },
+    { label: 'Cafetería', href: 'https://scw1.onrender.com/', external: true, icon: '/images/logo_sc.jpg' },
   ],
 };
 
@@ -32,16 +33,14 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contacto" className="bg-tierra text-white/80">
+    <footer id="contacto" className="bg-[#4f3b2a] text-white/80">
       {/* Main Footer */}
       <div className="section-padding py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-14 h-14 rounded-full border-2 border-dorado flex items-center justify-center bg-bosque">
-                <span className="font-display text-dorado text-2xl font-bold">A</span>
-              </div>
+              <img src="/images/logo.png" alt="Amador Logo" className="w-14 h-14 rounded-full border-2 border-dorado object-cover" />
               <div>
                 <h3 className="font-display text-white text-lg font-semibold">AMADOR</h3>
                 <p className="text-[10px] text-dorado tracking-widest">CAFÉ DE NUESTRA TIERRA</p>
@@ -63,9 +62,12 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-dorado transition-colors"
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                    className="flex items-center gap-1.5 text-sm text-white/70 hover:text-dorado transition-colors w-fit"
                   >
                     {link.label}
+                    {link.icon && <img src={link.icon} alt={link.label} className="w-4 h-4 rounded-full border border-dorado/50 object-cover" />}
                   </a>
                 </li>
               ))}

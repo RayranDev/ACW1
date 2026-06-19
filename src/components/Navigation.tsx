@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'PRODUCTOS', href: '#productos' },
   { label: 'SOBRE NOSOTROS', href: '#sobre-nosotros' },
   { label: 'CONTACTO', href: '#contacto' },
+  { label: 'CAFETERÍA', href: 'https://scw1.onrender.com/', external: true, icon: '/images/logo_sc.jpg' },
 ];
 
 export default function Navigation() {
@@ -66,13 +67,18 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
+                  if (!link.external) {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }
                 }}
-                className="px-3 py-2 text-xs font-body font-medium tracking-wider text-white/90 hover:text-dorado transition-colors rounded-sm"
+                className="flex items-center gap-1.5 px-3 py-2 text-xs font-body font-medium tracking-wider text-white/90 hover:text-dorado transition-colors rounded-sm"
               >
                 {link.label}
+                {link.icon && <img src={link.icon} alt={link.label} className="w-4 h-4 rounded-full border border-dorado/50 object-cover" />}
               </a>
             ))}
           </div>
@@ -124,13 +130,18 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
               onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(link.href);
+                if (!link.external) {
+                  e.preventDefault();
+                  handleNavClick(link.href);
+                }
               }}
-              className="text-xl font-display text-white hover:text-dorado transition-colors"
+              className="flex items-center gap-2 text-xl font-display text-white hover:text-dorado transition-colors"
             >
               {link.label}
+              {link.icon && <img src={link.icon} alt={link.label} className="w-5 h-5 rounded-full border border-dorado/50 object-cover" />}
             </a>
           ))}
           <a

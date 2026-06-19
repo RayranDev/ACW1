@@ -45,9 +45,9 @@ module.exports = {
           dark: "#1a0f08",
         },
         bosque: {
-          DEFAULT: "#1e3a2e",
-          light: "#2d5a3d",
-          dark: "#152b22",
+          DEFAULT: "#14261c",
+          light: "#1e392a",
+          dark: "#0b1510",
         },
         crema: {
           DEFAULT: "#f8f5f0",
@@ -66,9 +66,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['Cormorant Garamond', 'Georgia', 'serif'],
+        subtitle: ['Playfair Display', 'Georgia', 'serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
-        accent: ['Cormorant Garamond', 'Georgia', 'serif'],
+        accent: ['Parisienne', 'cursive'],
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
