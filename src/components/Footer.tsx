@@ -13,9 +13,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://instagram.com/amador.cafe', label: '@amador.cafe' },
-  { icon: Facebook, href: 'https://facebook.com/', label: 'Amador Café' },
-  { icon: Music, href: 'https://www.tiktok.com/@amador.cafe', label: '@amador.cafe' },
+  { icon: Instagram, href: 'https://www.instagram.com/sunshinecoffee11', label: '@sunshinecoffee11' },
+  { icon: Facebook, href: 'https://facebook.com/', label: 'Sunshine Coffee' },
+  { icon: Music, href: 'https://www.tiktok.com/@sunshine.coffe5', label: '@sunshine.coffe5' },
 ];
 
 export default function Footer() {
