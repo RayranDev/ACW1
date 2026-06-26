@@ -149,7 +149,7 @@ export default function ProductsSection() {
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full aspect-[2/3] object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                   </div>
@@ -170,13 +170,15 @@ export default function ProductsSection() {
                       {product.description}
                     </p>
 
-                    <div className="flex items-center justify-between">
+                    {/* Precio oculto temporalmente — el flujo es cotización por WhatsApp.
+                        Para revertir: descomentar este bloque. */}
+                    {/* <div className="flex items-center justify-between">
                       <span className="font-display text-tierra text-lg font-semibold">
                         {product.price}
                       </span>
-                    </div>
+                    </div> */}
 
-                    <button 
+                    <button
                       onClick={() => addToCart({
                         id: product.id,
                         name: product.name,

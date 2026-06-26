@@ -3,24 +3,17 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetFooter } from './ui/
 import { Trash2, Plus, Minus } from 'lucide-react';
 
 export default function CartDrawer() {
-  const { isCartOpen, closeCart, cartItems, updateQuantity, removeFromCart, cartTotal, clearCart } = useCart();
+  // Nota: `cartTotal` sigue disponible en el contexto; se omite acá porque
+  // el flujo actual es de cotización (sin precios ni total).
+  const { isCartOpen, closeCart, cartItems, updateQuantity, removeFromCart, clearCart } = useCart();
 
   const handleCheckout = () => {
     if (cartItems.length === 0) return;
 
-    let message = "Hola, me gustaría hacer una compra/cotización de los siguientes productos:\n\n";
+    let message = "Hola, me gustaría cotizar los siguientes productos:\n\n";
     cartItems.forEach(item => {
-      message += `- ${item.quantity}x ${item.name} (${item.price})\n`;
+      message += `- ${item.quantity}x ${item.name}\n`;
     });
-    
-    // Format total to be like $XXX.XXX
-    const formattedTotal = new Intl.NumberFormat('es-CO', {
-      style: 'currency',
-      currency: 'COP',
-      minimumFractionDigits: 0
-    }).format(cartTotal);
-
-    message += `\n*Total estimado: ${formattedTotal}*`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/573003714694?text=${encodedMessage}`, '_blank');
@@ -52,7 +45,8 @@ export default function CartDrawer() {
                   <div className="flex-1 flex flex-col justify-between">
                     <div>
                       <h4 className="font-display text-sm font-semibold text-tierra leading-tight">{item.name}</h4>
-                      <p className="text-xs text-dorado font-bold mt-1">{item.price}</p>
+                      {/* Precio por ítem oculto temporalmente (cotización). Revertir: descomentar. */}
+                      {/* <p className="text-xs text-dorado font-bold mt-1">{item.price}</p> */}
                     </div>
                     <div className="flex items-center justify-between mt-2">
                       <div className="flex items-center gap-3 bg-white px-2 py-1 rounded-sm border border-tierra/10">
@@ -85,18 +79,20 @@ export default function CartDrawer() {
         </div>
 
         <SheetFooter className="border-t border-tierra/10 pt-4 flex flex-col gap-4">
+          {/* Fila de Total oculta temporalmente (cotización). Revertir: descomentar.
           <div className="flex justify-between items-center w-full">
             <span className="font-display text-tierra font-semibold">Total</span>
             <span className="font-display text-lg text-tierra font-bold">
               {new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }).format(cartTotal)}
             </span>
           </div>
-          <button 
+          */}
+          <button
             onClick={handleCheckout}
             disabled={cartItems.length === 0}
             className="w-full py-3 bg-bosque text-white font-medium text-sm rounded-sm hover:bg-bosque-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Comprar por WhatsApp
+            Cotizar por WhatsApp
           </button>
         </SheetFooter>
       </SheetContent>
